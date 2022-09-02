@@ -1,2 +1,2 @@
 # PasswordStrengthMeter
-Password strength meter using Javascript
+Password strength meter using vanilla Javascript
