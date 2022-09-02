@@ -5,15 +5,15 @@ const password = document.getElementById('password');
 
 // if form exists then set the progress bar to default value
 if (form){
-    form.addEventListener('submit', (e)=> e.preventDefault());
-
     utils.getProgressBar(0);
-    
-    decrease('contains_upper');
-    decrease('contains_lower');
-    decrease('contains_number');
-    decrease('contains_special_chars');
-    decrease('minLength');
+
+    decrease(
+        'contains_upper',
+        'contains_lower',
+        'contains_number',
+        'contains_special_chars',
+        'minLength',
+    );
 
 }
 
@@ -30,12 +30,20 @@ function increase(selector){
 
 }
 
-function decrease(selector){
-    const content = document.getElementById(selector);
-    if (content) {
-        content.innerHTML = '';
-        content.innerHTML = utils.decreaseBar;
+function decrease(...selectors){
+    if (selectors.length) {
+        for(const selector of selectors){
+            const content = document.getElementById(selector);
+            if (content) {
+                content.innerHTML = '';
+                content.innerHTML = utils.decreaseBar;
+                
+            }
+
+        }
+        
     }
+   
 
 }
 
