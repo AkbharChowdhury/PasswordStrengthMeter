@@ -14,16 +14,47 @@
         </div>
       </div>
     </form>
-<section id="password-icons">
-  <p>contains upper case</p><div id="contains_upper"></div>
+<section>
+  <!-- vertically aligning icons -->
+
+<div style="font-size: 2rem;">
+  <div>
+    <span id="contains_upper"></span> contains upper case
+  </div>
+
+  <div>
+    <span id="contains_lower"></span> contains lower case
+  </div>
+
+  <div>
+    <span id="contains_number"></span> contains number
+  </div>
+
+  <div>
+    <span id="contains_special_chars"></span> contains special character
+  </div>
+
+  <div>
+    <span id="min_length"></span> is at least 8 characters long
+  </div>
+
+  <!-- <div><i class="fa-solid fa-skiing fa-fw" style="background:SkyBlue"></i> contains lower case</div>
+  <div><i class="fa-solid fa-skiing-nordic fa-fw" style="background:DodgerBlue"></i>contains number</div>
+  <div><i class="fa-solid fa-snowboarding fa-fw" style="background:SkyBlue"></i> contains contains a special character</div>
+  <div><i class="fa-solid fa-snowplow fa-fw" style="background:DodgerBlue"></i> is 8 characters long</div> -->
+</div>
+</section>
+<!-- <section id="password-icons">
+  <p>contains upper case</p>
+  <div id="contains_upper"></div>
   <p>contains lower case</p>
   <div id="contains_lower"></div>
   <p>contains number</p>
   <div id="contains_number"></div>
   <p>contains contains a special character</p>
-  <div id="contains_number"></div>
+  <div id="containsSpecialChars"></div>
   <p>is 8 characters long</p>
   <div id="minLength"></div>
-</section>
+</section> -->
  </div>
 <?php require_once 'templates/footer.php' ?>
