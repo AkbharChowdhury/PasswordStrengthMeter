@@ -2,19 +2,20 @@ import * as utils from "./utils.js";
 const passwordCriteria = utils.passwordStrengthMeter;
 const form = document.querySelector('form');
 const password = document.getElementById('password');
-
 // if form exists then set the progress bar to default value
+
+const fields = Object.freeze({
+    containsUpperCase : 'contains_upper',
+    containsLowerCase : 'contains_lower',
+    containsNumber : 'contains_number',
+    containsSpecialChars: 'contains_special_chars',
+    is8Chars : 'min_length',
+
+})
+
 if (form){
     utils.getProgressBar(0);
-
-    decrease(
-        'contains_upper',
-        'contains_lower',
-        'contains_number',
-        'contains_special_chars',
-        'minLength',
-    );
-
+    for (const [k, v] of Object.entries(fields)) decrease(v)
 }
 
 // check password
@@ -58,11 +59,11 @@ function checkPassword(password) {
 
     utils.getProgressBar(strength);
 
-    passwordCriteria.containsUpperCase(password) ? increase('contains_upper') : decrease('contains_upper')
-    passwordCriteria.containsLowerCase(password) ? increase('contains_lower') : decrease('contains_lower')
-    passwordCriteria.containsNumber(password) ? increase('contains_number') : decrease('contains_number')
-    passwordCriteria.containsSpecialChars(password) ? increase('containsSpecialChars') : decrease('containsSpecialChars')
-    passwordCriteria.is8Chars(password) ? increase('minLength') : decrease('minLength')
+    passwordCriteria.containsUpperCase(password) ? increase(fields.containsUpperCase) : decrease(fields.containsUpperCase)
+    passwordCriteria.containsLowerCase(password) ? increase(fields.containsLowerCase) : decrease(fields.containsLowerCase)
+    passwordCriteria.containsNumber(password) ? increase(fields.containsNumber) : decrease(fields.containsNumber)
+    passwordCriteria.containsSpecialChars(password) ? increase(fields.containsSpecialChars) : decrease(fields.containsSpecialChars)
+    passwordCriteria.is8Chars(password) ? increase(fields.is8Chars) : decrease(fields.is8Chars)
     
     
 }
