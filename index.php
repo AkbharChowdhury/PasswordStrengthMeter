@@ -37,24 +37,8 @@
   <div>
     <span id="min_length"></span> is at least 8 characters long
   </div>
-
-  <!-- <div><i class="fa-solid fa-skiing fa-fw" style="background:SkyBlue"></i> contains lower case</div>
-  <div><i class="fa-solid fa-skiing-nordic fa-fw" style="background:DodgerBlue"></i>contains number</div>
-  <div><i class="fa-solid fa-snowboarding fa-fw" style="background:SkyBlue"></i> contains contains a special character</div>
-  <div><i class="fa-solid fa-snowplow fa-fw" style="background:DodgerBlue"></i> is 8 characters long</div> -->
 </div>
 </section>
-<!-- <section id="password-icons">
-  <p>contains upper case</p>
-  <div id="contains_upper"></div>
-  <p>contains lower case</p>
-  <div id="contains_lower"></div>
-  <p>contains number</p>
-  <div id="contains_number"></div>
-  <p>contains contains a special character</p>
-  <div id="containsSpecialChars"></div>
-  <p>is 8 characters long</p>
-  <div id="minLength"></div>
-</section> -->
+
  </div>
 <?php require_once 'templates/footer.php' ?>
