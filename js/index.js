@@ -2,7 +2,6 @@ import * as utils from "./utils.js";
 const passwordCriteria = utils.passwordStrengthMeter;
 const form = document.querySelector('form');
 const password = document.getElementById('password');
-// if form exists then set the progress bar to default value
 
 const fields = Object.freeze({
     containsUpperCase : 'contains_upper',
@@ -15,7 +14,7 @@ const fields = Object.freeze({
 
 if (form){
     utils.getProgressBar(0);
-    for (const [k, v] of Object.entries(fields)) decrease(v)
+    Object.values(fields).forEach(v => decrease(v));
 }
 
 // check password
@@ -34,18 +33,14 @@ function increase(selector){
 function decrease(...selectors){
     if (selectors.length) {
         for(const selector of selectors){
-            const content = document.getElementById(selector);
+            let content = document.getElementById(selector);
             if (content) {
                 content.innerHTML = '';
                 content.innerHTML = utils.decreaseBar;
                 
             }
-
         }
-        
     }
-   
-
 }
 
 function checkPassword(password) {
